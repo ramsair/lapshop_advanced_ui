@@ -1,0 +1,18 @@
+<div class="container">
+    <!-- Popular Products Section -->
+    <section class="popular-products-section py-5">
+        <h2 class="text-center">Deals</h2>
+        <div class="row">
+            <div class="col-md-3 mt-4" *ngFor="let item of products">
+                <div class="card" (click)="onMobileClicked(item.id)">
+                    <img loading="lazy" [src]="item.image_url" class="card-img card-img-top" alt="iPhone 15 Pro Max">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p>{{item.price}}</p>
+                        <button class="btn btn-primary">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>

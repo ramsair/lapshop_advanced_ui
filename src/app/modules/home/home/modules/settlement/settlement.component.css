@@ -1,0 +1,63 @@
+.checkout-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input.form-control {
+    padding: 10px;
+    width: 100%;
+  }
+  
+  button.btn {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .total {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+/* Styling for the quantity controls */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Add some space between the buttons and the input */
+}
+
+.quantity-input {
+  width: 50px; /* Set a fixed width for the input */
+  text-align: center; /* Center the number inside the input field */
+  font-size: 16px; /* Reduce font size for consistency */
+  height: 30px; /* Make the input field height smaller */
+  margin: 0;
+  border: 1px solid #ccc; /* Add border to make the input more noticeable */
+  border-radius: 5px; /* Round the corners of the input */
+}
+
+.btn-sm {
+  font-size: 14px; /* Smaller font size for buttons */
+  padding: 5px 10px; /* Adjust padding for smaller button size */
+  border-radius: 5px; /* Round corners of buttons */
+}

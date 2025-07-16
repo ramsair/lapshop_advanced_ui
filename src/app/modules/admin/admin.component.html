@@ -1,0 +1,90 @@
+<div class="content m-5">
+  <h2 class="mb-4 text-center">Dashboard</h2>
+
+  <!-- Cards Section -->
+  <div class="row g-4 mb-4">
+    <div class="col-md-3">
+      <div class="card shadow-sm border-0 rounded-3 bg-gradient-primary text-white">
+        <div class="card-body d-flex flex-column align-items-center">
+          <h5 class="card-title">Total Sales</h5>
+          <h3> {{dashboardData?.total_sales}} </h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm border-0 rounded-3 bg-gradient-purple text-white">
+        <div class="card-body d-flex flex-column align-items-center">
+          <h5 class="card-title">Total Products</h5>
+          <h3>{{dashboardData?.total_products}}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm border-0 rounded-3 bg-gradient-warning text-white">
+        <div class="card-body d-flex flex-column align-items-center">
+          <h5 class="card-title">Total Orders</h5>
+          <h3>{{dashboardData?.total_orders}}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card shadow-sm border-0 rounded-3 bg-gradient-danger text-white">
+        <div class="card-body d-flex flex-column align-items-center">
+          <h5 class="card-title">Total Users</h5>
+          <h3>{{dashboardData?.total_users}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Orders Table -->
+  <div class="card mt-4 shadow-sm border-0 rounded-3">
+    <div class="card-header bg-dark text-white py-3">
+      <h5 class="mb-0">Recent Orders</h5>
+    </div>
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+          <thead class="table-light">
+            <tr>
+              <th>Order ID</th>
+              <th>Customer</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of products">
+              <td>{{order.id}}</td>
+              <td>{{order.name}}</td>
+              <td>${{order.price}}</td>
+              <td>
+                <div *ngIf="order.isEditClicked" class="d-flex justify-content-center">
+                  <select class="form-select form-select-sm w-auto" [(ngModel)]="order.order_status">
+                    <option value="Pending">Pending</option>
+                    <option value="Shipped">Shipped</option>
+                    <option value="Delivered">Delivered</option>
+                  </select>
+                </div>
+                <span *ngIf="!order.isEditClicked" class="badge badge-status" [class.bg-secondary]="order.order_status === 'Pending'" 
+                      [class.bg-info]="order.order_status === 'Shipped'"
+                      [class.bg-success]="order.order_status === 'Delivered'">
+                  {{order.order_status}}
+                </span>
+              </td>
+              <td>
+                <button *ngIf="!order.isEditClicked" (click)="editStatus(order.id)" class="btn btn-outline-primary btn-sm me-1">
+                  Edit
+                </button>
+                <button *ngIf="order.isEditClicked" (click)="updateOrderStatus(order.id, order.order_status)" class="btn btn-outline-warning btn-sm">
+                  Update
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

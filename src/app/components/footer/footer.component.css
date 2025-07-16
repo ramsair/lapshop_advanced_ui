@@ -1,0 +1,53 @@
+/* Apply a full height layout to the body */
+html, body {
+    height: 100%; /* Ensure the body and html take up the full height */
+    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+}
+
+/* Main content area should take up the remaining space */
+.main-content {
+    flex-grow: 1; /* Allow the content to take up remaining space */
+}
+
+/* Footer styles */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    footer .container {
+        text-align: center;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer .container {
+        font-size: 12px;
+    }
+}

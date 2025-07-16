@@ -1,0 +1,122 @@
+<div class="product-container">
+  <div *ngIf="productDetails" class="row">
+    <!-- Product Image -->
+    <div class="col-md-6">
+      <img loading="lazy" [src]="productDetails?.image_url" class="card-img card-img-top" alt="Google Pixel 8a">
+    </div>
+
+    <!-- Product Details and Pricing -->
+    <div class="col-md-6">
+      <h2>{{productDetails?.name}}</h2>
+      <div class="ratings">
+        <span>{{productDetails?.rating}} ★</span>
+        <span>(4,063 Ratings & 360 Reviews)</span>
+      </div>
+      <div class="pricing">
+        <p class="price">After Discount: $ {{(productDetails?.price - (productDetails?.price * 0.10)) | number:'1.2-2'}}
+        </p>
+        <p class="original-price">Actual Price: {{productDetails?.price | currency }}</p>
+        <p class="discount">Discount: 10% off</p>
+      </div>
+
+      <div class="offers">
+        <h4>Available Offers</h4>
+        <ul>
+          <li>Bank Offer ₹1000 Off On All Banks Credit And Debit Card EMI Transactions.</li>
+          <li>Bank Offer ₹1000 Off On Flipkart Axis Bank Credit Card Non EMI Transactions.</li>
+          <li>Bank Offer 5% Unlimited Cashback on Flipkart Axis Bank Credit Card.</li>
+          <li>Special Price Get extra ₹15,000 off (price inclusive of cashback/coupon)</li>
+        </ul>
+      </div>
+
+      <div class="exchange-option">
+        <button class="btn btn-primary" (click)="onBuyClick()">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="specifications-container">
+    <h2>Specifications</h2>
+
+    <div class="specifications-section">
+      <h3>General</h3>
+      <table class="specifications-table">
+        <tr>
+          <th>Model Number</th>
+          <td>{{productDetails?.additionalJson?.modelNumber}}</td>
+        </tr>
+        <tr>
+          <th>Processor Brand</th>
+          <td>{{productDetails?.additionalJson?.processorBrand}}</td>
+        </tr>
+        <tr>
+          <th>Processor Type</th>
+          <td>{{productDetails?.additionalJson?.processorType}}</td>
+        </tr>
+        <tr>
+          <th>RAM</th>
+          <td>{{productDetails?.additionalJson?.ram}}</td>
+        </tr>
+        <tr>
+          <th>Internal Storage</th>
+          <td>{{productDetails?.additionalJson?.internalStorage}}</td>
+        </tr>
+        <tr>
+          <th>Operating System</th>
+          <td>{{productDetails?.additionalJson?.operatingSystem}}</td>
+        </tr>
+        <tr>
+          <th>Display Size</th>
+          <td>{{productDetails?.additionalJson?.displaySize}}</td>
+        </tr>
+        <tr>
+          <th>Resolution</th>
+          <td>{{productDetails?.additionalJson?.resolution}}</td>
+        </tr>
+        <tr>
+          <th>Battery Capacity</th>
+          <td>{{productDetails?.additionalJson?.batteryCapacity}}</td>
+        </tr>
+        <tr>
+          <th>Graphics Card</th>
+          <td>{{productDetails?.additionalJson?.graphicsCard}}</td>
+        </tr>
+        <tr>
+          <th>Ports</th>
+          <td>{{productDetails?.additionalJson?.ports}}</td>
+        </tr>
+        <tr>
+          <th>Weight</th>
+          <td>{{productDetails?.additionalJson?.weight}}</td>
+        </tr>
+        <tr>
+          <th>Dimensions</th>
+          <td>{{productDetails?.additionalJson?.dimensions}}</td>
+        </tr>
+        <tr>
+          <th>Touchscreen</th>
+          <td>{{productDetails?.additionalJson?.touchscreen}}</td>
+        </tr>
+        <tr>
+          <th>Backlit Keyboard</th>
+          <td>{{productDetails?.additionalJson?.backlitKeyboard}}</td>
+        </tr>
+        <tr>
+          <th>Fingerprint Sensor</th>
+          <td>{{productDetails?.additionalJson?.fingerprintSensor}}</td>
+        </tr>
+        <tr>
+          <th>Webcam</th>
+          <td>{{productDetails?.additionalJson?.webcam}}</td>
+        </tr>
+        <tr>
+          <th>Warranty Summary</th>
+          <td>{{productDetails?.additionalJson?.warrantySummary}}</td>
+        </tr>
+        <tr>
+          <th>Color</th>
+          <td>{{productDetails?.additionalJson?.color}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>

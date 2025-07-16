@@ -1,0 +1,147 @@
+.product-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: auto;
+    min-width: 300px;
+    min-height: 400px;
+    object-fit: contain;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .ratings {
+    font-size: 1rem;
+    color: #888;
+  }
+  
+  .pricing .price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #34c759;
+  }
+  
+  .pricing .original-price {
+    font-size: 1.2rem;
+    text-decoration: line-through;
+    color: #888;
+  }
+  
+  .pricing .discount {
+    font-size: 1.2rem;
+    color: #ff3b30;
+  }
+  
+  .pricing .extra-off {
+    font-size: 1.2rem;
+    color: #ff3b30;
+    margin-top: 10px;
+  }
+  
+  .offers h4 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .offers ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .offers ul li {
+    margin-bottom: 8px;
+  }
+  
+  .exchange-option {
+    margin-top: 20px;
+  }
+  
+  .exchange-option span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .exchange-option .btn {
+    background-color: #34c759;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+  .exchange-option .btn:hover {
+    background-color: #28a745;
+  }
+
+  .specifications-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .specifications-section {
+    margin-bottom: 30px;
+  }
+  
+  .specifications-section h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .specifications-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .specifications-table th,
+  .specifications-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .specifications-table th {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    width: 30%;
+  }
+  
+  .specifications-table td {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .specifications-table tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+
+  .card-img {
+    min-height: 600px;
+    min-width: 200px;
+    object-fit: cover; /* This ensures the image covers the area without distortion */
+  }

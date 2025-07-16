@@ -1,0 +1,62 @@
+.product-img {
+    width: 80px;  /* Set desired width */
+    height: 80px; /* Set desired height */
+    object-fit: cover; /* Ensures the image maintains aspect ratio */
+    border-radius: 5px; /* Optional: adds rounded corners */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: adds a shadow */
+}
+
+/* Gradient Backgrounds */
+.bg-gradient-primary {
+  background: linear-gradient(45deg, #007bff, #00c6ff);
+}
+
+.bg-gradient-success {
+  background: linear-gradient(45deg, #28a745, #5de69d);
+}
+
+.bg-gradient-warning {
+  background: linear-gradient(45deg, #ffc107, #ffe066);
+}
+
+.bg-gradient-danger {
+  background: linear-gradient(45deg, #dc3545, #ff6b6b);
+}
+
+/* Status Badge Colors */
+.badge-status {
+  font-size: 0.85rem;
+  padding: 0.4em 0.6em;
+}
+
+/* Card enhancements */
+.card {
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Table enhancements */
+.table th, .table td {
+  vertical-align: middle;
+}
+.table thead th {
+  border-top: none;
+  border-bottom: 2px solid #dee2e6;
+}
+.table-responsive {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.bg-gradient-purple {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+}
+
+
+.card1{
+    width: 350px;
+}
+.clr{
+color: red;
+}

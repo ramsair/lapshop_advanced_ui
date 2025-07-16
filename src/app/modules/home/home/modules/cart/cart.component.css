@@ -1,0 +1,322 @@
+.card-img {
+  min-height: 200px;
+  min-width: 200px;
+  object-fit: cover;
+  /* This ensures the image covers the area without distortion */
+}
+
+/* Reset CSS */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #d1d9e6;
+  /* Darker background for the whole page */
+  line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 300px 100px 300px;
+  background-color: #c8e4ea;
+  /* Light blue background for the hero section */
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #333;
+}
+
+.hero-text p {
+  font-size: 16px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.cta-buttons {
+  margin-top: 20px;
+}
+
+.shop-btn,
+.compare-btn {
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  /* Add smooth transition for hover effects */
+}
+
+/* Default button styles */
+.shop-btn {
+  background-color: #1b839b;
+  color: white;
+}
+
+.compare-btn {
+  background-color: transparent;
+  border: 2px solid #1b839b;
+  color: #1b839b;
+}
+
+/* Hover Effect */
+.shop-btn:hover,
+.compare-btn:hover {
+  background-color: #074c5c;
+  color: white;
+  transform: scale(1.05);
+  /* Slightly enlarge the button on hover */
+}
+
+/* Responsive button styles */
+@media (max-width: 768px) {
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-direction: column;
+  }
+
+  .cta-buttons button {
+    width: 100%;
+    /* Make the buttons full-width on smaller screens */
+    max-width: 300px;
+    /* Max width to prevent it from becoming too wide */
+  }
+
+  /* Adjust hover effect for smaller screens */
+  .shop-btn:hover,
+  .compare-btn:hover {
+    transform: scale(1.03);
+    /* Slightly less scaling on hover for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .cta-buttons button {
+    width: 100%;
+    /* Make buttons take up the full width on very small screens */
+    padding: 12px 0;
+    /* Add more padding for better touch interaction */
+  }
+}
+
+
+
+
+
+
+/* Browse by Category Section */
+.browse-category-section {
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+}
+
+.browse-category-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 250px;
+}
+
+.card-body {
+  border-radius: 15px;
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.category-icon {
+  font-size: 30px;
+  /* Increased icon size for better visibility */
+  margin-bottom: 20px;
+  color: #1b839b;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  /* width: 60px;
+  height: 60px; */
+  margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .browse-category-section h2 {
+    font-size: 28px;
+    /* Smaller heading size on small screens */
+  }
+
+  .card-body {
+    padding: 15px;
+    /* Reduced padding on smaller screens */
+  }
+
+
+
+  .card-title {
+    font-size: 16px;
+    /* Smaller title font on mobile */
+  }
+
+  .card p {
+    font-size: 12px;
+    /* Smaller text for descriptions */
+  }
+}
+
+
+
+
+
+/* Popular Products Section */
+.popular-products-section {
+  background-color: #f8f9fa;
+  /* Light background color for the section */
+  padding: 60px 0;
+}
+
+.popular-products-section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.card-img-top {
+  width: 100%;
+  /* Ensure the image takes full width of the card */
+  height: 200px;
+  /* Set a fixed height for the image */
+  object-fit: cover;
+  /* Ensure the image covers the area without stretching */
+  border-radius: 15px 15px 0 0;
+  /* Rounded top corners for the image */
+  overflow: hidden;
+  /* Prevent the image from overflowing the card */
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-body p {
+  font-size: 16px;
+  color: #666;
+}
+
+.card-body .btn-primary {
+  background-color: #1b839b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.hero-image img {
+  width: 400px;
+  /* Adjust as needed */
+  height: auto;
+  /* Maintains aspect ratio */
+  border-radius: 0.5rem;
+  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Soft shadow */
+}
+
+.card-body .btn-primary:hover {
+  background-color: #084452;
+}
+
+/* Media Queries for Responsiveness */
+/* @media (max-width: 768px) {
+  .card {
+    width: 100%; 
+    max-width: 250px;
+  }
+
+  .card-img-top {
+    height: 200px; 
+  }
+
+  .popular-products-section h2 {
+    font-size: 28px;
+  }
+
+  .card-body .btn-primary {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    width: 100%; 
+    max-width: 200px; 
+  }
+
+  .card-img-top {
+    height: 180px;
+  }
+
+  .popular-products-section h2 {
+    font-size: 24px;
+  }
+} */
+ .margin-cards{
+  margin-left: 20rem;
+  margin-right: 20rem;
+  margin-top: 5rem;
+}

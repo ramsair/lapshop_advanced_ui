@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+
+.price {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .original-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-left: 10px;
+  }
+  
+  .discount-label {
+    font-size: 14px;
+    color: green;
+    margin-left: 10px;
+  }
+
+
+.margin-cards{
+  margin-left: 20rem;
+  margin-right: 20rem;
+  margin-top: 5rem;
+}

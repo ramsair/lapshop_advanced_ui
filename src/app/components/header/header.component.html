@@ -1,0 +1,51 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">LapShop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul *ngIf="!isAdmin" class="navbar-nav ms-auto">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/home" routerLinkActiveOptions="{ exact: true }">Home</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/home/laptops">Laptops</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/home/orders">My Orders</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/home/support">Support</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search phones..." aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/home/cart"><i class="bi bi-cart"></i> Cart</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a (click)="onLogOutClick()" class="nav-link" href="#"><i class="bi bi-box-arrow-right"></i> LogOut</a>
+          </li>
+        </ul>
+      
+        <!-- Admin -->
+        <ul *ngIf="isAdmin" class="navbar-nav ms-auto">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/admin/dashboard" routerLinkActiveOptions="{ exact: true }">Dashboard</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" routerLink="/admin/products">Products</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a (click)="onLogOutClick()" class="nav-link" href="#"><i class="bi bi-box-arrow-right"></i> LogOut</a>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+  </nav>

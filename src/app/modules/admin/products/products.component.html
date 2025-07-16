@@ -1,0 +1,215 @@
+
+<div class="content m-5">
+  <!-- Add Product Button -->
+  <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addProductModal" (click)="addProductForm.reset(); operation='ADD'">
+    + Add Laptop
+  </button>
+  
+  <!-- Add Product Modal -->
+  <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title" id="addProductModalLabel">{{ operation === 'ADD' ? 'Add Laptop' : 'Edit Laptop' }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form [formGroup]="addProductForm" (ngSubmit)="operation == 'ADD' ? addProduct() : updateProduct()">
+            <div class="row g-3">
+  
+              <!-- Image Upload -->
+              <div class="col-md-6">
+                <label>Product Image <span class="clr">*</span></label>
+                <input type="file" class="form-control"  (change)="onFileSelected($event)" accept="image/*">
+              </div>
+  
+              <!-- Basic Info -->
+              <div class="col-md-6">
+                <label>Product Name <span class="clr">*</span></label>
+                <input type="text" class="form-control" formControlName="name">
+              </div>
+  
+              <div class="col-md-6">
+                <label>Description <span class="clr">*</span></label>
+                <textarea class="form-control" formControlName="description"></textarea>
+              </div>
+  
+              <div class="col-md-6">
+                <label>Category <span class="clr">*</span></label>
+                <select class="form-select" formControlName="category">
+                  <option *ngFor="let option of categories" [value]="option.value">{{ option.label }}</option>
+                </select>
+              </div>
+  
+              <div class="col-md-4">
+                <label>Price ($) <span class="clr">*</span></label>
+                <input type="number" class="form-control" formControlName="price">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Stock Quantity <span class="clr">*</span></label>
+                <input type="number" class="form-control" formControlName="stock">
+              </div>
+  
+              <div class="col-md-4">
+                <label>In The Box</label>
+                <input type="text" class="form-control" formControlName="inTheBox">
+              </div>
+  
+              <!-- Laptop Specifications -->
+              <h5>Laptop Specifications</h5>
+  
+              <div class="col-md-4">
+                <label>Model Number</label>
+                <input type="text" class="form-control" formControlName="modelNumber">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Processor Brand</label>
+                <input type="text" class="form-control" formControlName="processorBrand">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Processor Type</label>
+                <input type="text" class="form-control" formControlName="processorType">
+              </div>
+  
+              <div class="col-md-4">
+                <label>RAM</label>
+                <input type="text" class="form-control" formControlName="ram">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Internal Storage</label>
+                <input type="text" class="form-control" formControlName="internalStorage">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Operating System</label>
+                <input type="text" class="form-control" formControlName="operatingSystem">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Display Size</label>
+                <input type="text" class="form-control" formControlName="displaySize">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Resolution</label>
+                <input type="text" class="form-control" formControlName="resolution">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Battery Capacity</label>
+                <input type="text" class="form-control" formControlName="batteryCapacity">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Graphics Card</label>
+                <input type="text" class="form-control" formControlName="graphicsCard">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Ports</label>
+                <input type="text" class="form-control" formControlName="ports">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Weight</label>
+                <input type="text" class="form-control" formControlName="weight">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Dimensions</label>
+                <input type="text" class="form-control" formControlName="dimensions">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Touchscreen</label>
+                <input type="text" class="form-control" formControlName="touchscreen">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Backlit Keyboard</label>
+                <input type="text" class="form-control" formControlName="backlitKeyboard">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Fingerprint Sensor</label>
+                <input type="text" class="form-control" formControlName="fingerprintSensor">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Webcam</label>
+                <input type="text" class="form-control" formControlName="webcam">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Warranty Summary</label>
+                <input type="text" class="form-control" formControlName="warrantySummary">
+              </div>
+  
+              <div class="col-md-4">
+                <label>Color</label>
+                <input type="text" class="form-control" formControlName="color">
+              </div>
+  
+              <!-- Submit Buttons -->
+              <div class="mt-4 d-flex justify-content-end">
+                <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">Cancel</button>
+                <button *ngIf="operation=='ADD'" type="submit" class="btn btn-primary"
+                  [disabled]="addProductForm.invalid">Add Laptop</button>
+                <button *ngIf="operation=='EDIT'" type="submit" class="btn btn-primary"
+                  [disabled]="addProductForm.invalid">Update Laptop</button>
+              </div>
+  
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Products Table -->
+  <div class="card mt-4 shadow-sm border-0 rounded-3">
+    <div class="card-header bg-dark text-white py-3">
+      <h5 class="mb-0">Laptops</h5>
+    </div>
+    <div class="card-body p-0">
+      <div class="table-responsive">
+        <table class="table table-hover align-middle">
+          <thead class="table-light">
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Total Value</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let product of products; let i = index">
+              <td><img loading="lazy" [src]="product?.image_url" class="product-img" alt="Product"></td>
+              <td>{{ product.name }}</td>
+              <td>{{ product.category }}</td>
+              <td>${{ product.price }}</td>
+              <td>{{ product.stock }}</td>
+              <td>${{ product.price * product.stock }}</td>
+              <td>
+                <button class="btn btn-sm btn-danger" (click)="removeProduct(i, product.id)">
+                  <i class="bi bi-trash"></i>
+                </button>
+                <button class="btn btn-sm btn-warning ms-2" data-bs-toggle="modal" data-bs-target="#addProductModal"
+                  (click)="editProduct(product.id)">
+                  <i class="bi bi-pencil"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

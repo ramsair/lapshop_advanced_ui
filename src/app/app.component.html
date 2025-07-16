@@ -1,0 +1,7 @@
+<!-- <app-login *ngIf="!onRegisterClick && !isUserLoggined" (loginUser)="onLoginClicked($event)" (registerUserClicked)="onRegisterUser($event)" ></app-login>
+<app-register-user *ngIf="onRegisterClick && !isUserLoggined" (registerUser)="updateUserRegistation($event)"></app-register-user> -->
+<ng-container>
+    <app-header *ngIf="authService.isLoggedIn()"></app-header>
+    <router-outlet></router-outlet>
+    <app-footer  *ngIf="authService.isLoggedIn()"></app-footer>
+</ng-container>

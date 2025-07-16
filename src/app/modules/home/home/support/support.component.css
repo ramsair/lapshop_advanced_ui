@@ -1,0 +1,88 @@
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 300px 100px 300px;
+    background-color: #c8e4ea; /* Light blue background for the hero section */
+    align-items: center;
+  }
+
+  .hero-image img {
+    width: 400px;           /* Adjust as needed */
+    height: auto;           /* Maintains aspect ratio */
+    border-radius: 0.5rem;  /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Soft shadow */
+}
+
+/* Support Page Styles */
+.support-section {
+    background-color: #f8f9fa;
+  }
+  
+  .support-section h2 {
+    font-size: 40px;
+    color: #333;
+  }
+  
+  .support-section p {
+    font-size: 18px;
+    color: #666;
+  }
+  
+  h3 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .accordion-button {
+    background-color: #1b839b;
+    color: white;
+    font-size: 18px;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: #1b839b;
+  }
+  
+  .accordion-body {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .form-label {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .form-control {
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  .btn-primary {
+    background-color: #1b839b;
+    border-color: #1b839b;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #1b839b;
+  }
+  
+  @media (max-width: 768px) {
+    .accordion-button {
+      font-size: 16px;
+    }
+  
+    .form-control {
+      font-size: 14px;
+    }
+  
+    .btn-primary {
+      font-size: 16px;
+    }
+  }
+  

@@ -1,0 +1,58 @@
+<section class="hero-section">
+    <div class="hero-text">
+        <h1>Discover the Best Laptops of 2025</h1>
+        <p>Power, performance, and portability – explore our top laptop selections for every need.</p>
+        <div class="cta-buttons">
+        </div>
+    </div>
+    <div class="hero-image">
+        <img loading="lazy" src="../../../assets/images/laptop.webp" class="img-fluid rounded shadow" alt="Smartphone">
+    </div>
+</section>
+
+<div class="container p-0">
+<!-- Popular Products Section -->
+<section class="popular-products-section py-5">
+        <!-- Centered Dropdown to Filter by Category -->
+        <div class="col-12 d-flex justify-content-center">
+            <select class="form-select w-auto" [(ngModel)]="selectedCategory" (change)="filterProducts()">
+                <option value="" disabled selected>Filter by category</option>
+                <option *ngFor="let option of categories" [value]="option.value">{{ option.label }}</option>
+            </select>
+        </div>
+
+    <div class="row margin-cards" *ngIf="filteredProducts.length > 0; else noData" >
+        <div class="col-12 col-md-6 col-xl-3" *ngFor="let item of filteredProducts">
+            <div class="card" (click)="onMobileClicked(item.id)" >
+                <img  loading="lazy" [src]="item.image_url" class="card-img card-img-top" alt="iPhone 15 Pro Max">
+                <div class="card-body">
+                    <!-- Product Name and Rating -->
+                    <h5 class="card-title">{{item.name}}</h5>
+                    <div class="product-rating">
+                        <span class="stars">⭐⭐⭐⭐</span> 
+                    </div>
+
+                    <!-- Price with Discount -->
+                    <p class="product-price">
+                        <span class="price">${{ (item.price - (item.price * 0.10)) | number:'1.2-2' }}</span>
+                        <span class="original-price">${{item.price}}</span> <br>
+                        <span class="discount-label">10% off</span>
+                        <span class="discount-label">Quantity: {{item.stock}}</span>
+                    </p>
+                    
+                    <!-- Add to Cart Button -->
+                    <button class="btn btn-primary" (click)="addToCart($event, item.id)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- No data found message -->
+    <ng-template #noData>
+        <div class="col-12 text-center mt-4">
+            <p class="clr" >No data found for the selected category.</p>
+        </div>
+    </ng-template>
+
+</section>
+</div>

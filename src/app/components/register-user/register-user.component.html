@@ -1,0 +1,92 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg rounded card1">
+      <h3 class="text-center mb-3">Register</h3>
+  
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <!-- Name -->
+        <div class="mb-3">
+          <label for="name" class="form-label">Full Name <span class="clr">*</span></label>
+          <input 
+            type="text" 
+            id="name" 
+            class="form-control" 
+            formControlName="name"
+            [class.is-invalid]="submitted && registerForm.controls['name'].invalid">
+          <div class="invalid-feedback" *ngIf="submitted && registerForm.controls['name'].errors?.['required']">
+            Name is required.
+          </div>
+        </div>
+  
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email <span class="clr">*</span></label>
+          <input 
+            type="email" 
+            id="email" 
+            class="form-control" 
+            formControlName="email"
+            [class.is-invalid]="submitted && registerForm.controls['email'].invalid">
+          <div class="invalid-feedback" *ngIf="submitted && registerForm.controls['email'].errors?.['required']">
+            Email is required.
+          </div>
+          <div class="invalid-feedback" *ngIf="submitted && registerForm.controls['email'].errors?.['email']">
+            Enter a valid email.
+          </div>
+        </div>
+        
+        <div class="mb-3">
+          <label for="role" class="form-label">Role <span class="clr">*</span></label>
+          <select 
+            id="role" 
+            class="form-select" 
+            formControlName="role"
+            [class.is-invalid]="submitted && registerForm.controls['role'].invalid">
+            <option value="" disabled>Select role</option>
+            <option *ngFor="let role of roles" [value]="role.value">{{ role.label }}</option>
+          </select>
+          <div class="invalid-feedback" *ngIf="submitted && registerForm.controls['role'].errors?.['required']">
+            Role is required.
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password <span class="clr">*</span></label>
+          <input 
+            type="password" 
+            id="password" 
+            class="form-control" 
+            formControlName="password"
+            [class.is-invalid]="submitted && registerForm.controls['password'].invalid">
+          <div class="invalid-feedback" *ngIf="submitted && registerForm.controls['password'].errors?.['required']">
+            Password is required.
+          </div>
+          <div class="invalid-feedback" *ngIf="submitted && registerForm.controls['password'].errors?.['minlength']">
+            Password must be at least 6 characters.
+          </div>
+        </div>
+  
+        <!-- Confirm Password -->
+        <div class="mb-3">
+          <label for="confirmPassword" class="form-label">Confirm Password <span class="clr">*</span></label>
+          <input 
+            type="password" 
+            id="confirmPassword" 
+            class="form-control" 
+            formControlName="confirmPassword"
+            [class.is-invalid]="submitted && registerForm.controls['confirmPassword'].invalid">
+          <div class="invalid-feedback" *ngIf="submitted && registerForm.controls['confirmPassword'].errors?.['required']">
+            Confirm password is required.
+          </div>
+          <div class="invalid-feedback" *ngIf="submitted && registerForm.hasError('passwordMismatch')">
+            Passwords do not match.
+          </div>
+        </div>
+  
+        <!-- Register Button -->
+        <button type="submit" class="btn btn-primary w-100">Register</button>
+        <button  class="btn btn-primary w-100 mt-2" (click)="onBackClick()" >Back</button>
+      </form>
+    </div>
+  </div>
+  
