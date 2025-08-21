@@ -32,4 +32,5 @@ Use scripts from package.json:
 - `npm run test` → unit tests
 
 ## Contact
-Author: Ramsai Ummadisetty
+Author: Ramsai Ummadisetty 20035571@mydbs.ie
+
